@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islambek & Balnur Wedding Invitation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff6f0, #ffe0e6);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero {
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .date {
+      font-size: 1.5em;
+      margin: 10px 0 30px;
+    }
+    .countdown {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    .section {
+      margin: 60px 0;
+    }
+    .rsvp button {
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .map a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Islambek & Balnur</h1>
+    <div class="date">August 9, 2025</div>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <div class="section">
+    <h2>You're Invited!</h2>
+    <p>Join us in celebrating our special day with love, joy, and duas.</p>
+  </div>
+
+  <div class="section">
+    <h2>Event Details</h2>
+    <p><strong>Nikah Ceremony:</strong> 15:00 at Grand Almaty Mosque</p>
+    <p><strong>Reception:</strong> 18:00 at Kok-Tobe View Hall</p>
+    <p><strong>Dress Code:</strong> Elegant Traditional or Smart Casual</p>
+  </div>
+
+  <div class="section rsvp">
+    <h2>Will You Attend?</h2>
+    <button>I will attend</button>
+    <button>With my partner</button>
+    <button>Sorry, can't come</button>
+  </div>
+
+  <div class="section map">
+    <h2>Location</h2>
+    <p><a href="https://maps.google.com" target="_blank">View on Google Maps</a></p>
+  </div>
+
+  <div class="section">
+    <h2>We can't wait to celebrate with you!</h2>
+  </div>
+
+  <script>
+    const eventDate = new Date("2025-08-15T15:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance <= 0) {
+        clearInterval(timer);
+        countdownEl.innerHTML = "It's the big day!";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
