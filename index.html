@@ -679,6 +679,7 @@
         </style>
     </head>
     <body>
+
         <center>
             <div class="fade-in" id="content">
                 <img src="assets\slide1.png" style="width: 100%; margin-top: 0px;" loading="eager" />
@@ -691,8 +692,6 @@
             </div>
         </center>
 
-
-
         <center>
             <div class="fade-in" id="content">
                 <img src="assets\slide3.png" style="width: 100%; margin-top: 0px;" loading="eager" />
@@ -701,7 +700,7 @@
 
         <center>
             <div class="fade-in" id="content">
-                <img src="assets\slide4.png" style="width: 100%; margin-top: 20px;" />
+                <img src="assets\slide4.png" style="width: 100%; margin-top: 0px;" loading="eager" />
             </div>
         </center>
 
@@ -754,10 +753,18 @@
 
         <!-- Модальное окно -->
 
+        <div id="musicModal" class="modal">
+    <div class="modal-content" style="align-items: center">
+        <img src="assets\inv.png" style="width: 200px; height: auto" class="kk">
+        <button id="playMusic" style="color: black;">Шақыртуды ашу</button>
+    </div>
+</div>
+        
+        
         <audio id="backgroundMusic" loop>
-            <source src="assets\music.mp3" type="audio/mpeg" />
-            Ваш браузер не поддерживает воспроизведение музыки.
-        </audio>
+            <source src="assets\music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> 
 
         <script>
             // Получаем модальное окно, кнопку и аудио
@@ -777,6 +784,7 @@
                 document.body.classList.remove("modal-open"); // Включаем прокрутку
             }
         </script>
+
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
